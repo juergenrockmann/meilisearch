@@ -12,7 +12,7 @@ spec:
     helm:
       releaseName: meilisearch
       valueFiles:
-        - clusters/dev/meilisearch-values.yaml
+        - meilisearch-values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
