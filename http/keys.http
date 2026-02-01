@@ -1,0 +1,27 @@
+# curl
+#  -X POST 'http://meilisearch.local/keys'
+#  -H 'Authorization: Bearer MASTER_KEY'
+#  -H 'Content-Type: application/json'
+#  --data-binary '{
+#    "description": "Add documents: Products API key",
+#    "actions": ["documents.add"],
+#    "indexes": ["products"],
+#    "expiresAt": "2042-04-02T00:42:42Z"
+#  }'
+POST meilisearch.local/keys
+Authorization: Bearer MASTER_KEY
+Content-Type: application/json
+
+{
+  "description": "Add documents: Products API key",
+  "actions": [
+    "documents.add"
+  ],
+  "indexes": [
+    "products"
+  ],
+  "expiresAt": "2042-04-02T00:42:42Z"
+}
+
+###
+

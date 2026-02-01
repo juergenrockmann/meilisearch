@@ -1,0 +1,17 @@
+# curl
+#  -X POST 'meilisearch.local/indexes'
+#  -H 'Content-Type: application/json'
+#  --data-binary '{
+#    "uid": "movies",
+#    "primaryKey": "id"
+#  }'
+POST meilisearch.local/indexes
+Content-Type: application/json
+
+{
+  "uid": "movies",
+  "primaryKey": "id"
+}
+
+###
+

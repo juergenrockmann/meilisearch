@@ -1,0 +1,10 @@
+host: search.localhost
+env: development
+
+persistence:
+  enabled: true
+  size: 10Gi
+
+image:
+  repository: getmeili/meilisearch
+  tag: v1.6

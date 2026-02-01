@@ -1,0 +1,14 @@
+deployment:
+  replicas: 2
+
+ingressRoute:
+  dashboard:
+    enabled: false
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: ju.rockmann@gmail.com
+      storage: /data/acme.json
+      httpChallenge:
+        entryPoint: web

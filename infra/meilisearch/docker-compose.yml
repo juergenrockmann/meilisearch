@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.6
+    container_name: meilisearch
+    environment:
+      MEILI_ENV: development
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
+      MEILI_HTTP_PAYLOAD_SIZE_LIMIT: ${MEILI_HTTP_PAYLOAD_SIZE_LIMIT}
+    volumes:
+      - meili_data:/meili_data
+    restart: unless-stopped
+
+    labels:
+      - "traefik.enable=true"
+
+      # HTTP only in dev
+      - "traefik.http.routers.meili.rule=Host(`meilisearch.local`)"
+      - "traefik.http.routers.meili.entrypoints=web"
+      - "traefik.http.services.meili.loadbalancer.server.port=7700"
+
+    networks:
+      - traefik
+
+volumes:
+  meili_data:
+
+networks:
+  traefik:
+    external: true

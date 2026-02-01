@@ -1,0 +1,6 @@
+host: search.example.com
+env: production
+
+persistence:
+  enabled: true
+  size: 50Gi

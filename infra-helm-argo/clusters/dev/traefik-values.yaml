@@ -1,0 +1,14 @@
+deployment:
+  replicas: 1
+
+ingressRoute:
+  dashboard:
+    enabled: true
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: dev@example.com
+      storage: /data/acme.json
+      httpChallenge:
+        entryPoint: web

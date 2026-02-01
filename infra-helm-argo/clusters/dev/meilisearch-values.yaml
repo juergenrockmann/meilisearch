@@ -1,0 +1,6 @@
+host: search.dev.localhost
+env: development
+
+persistence:
+  enabled: true
+  size: 5Gi
