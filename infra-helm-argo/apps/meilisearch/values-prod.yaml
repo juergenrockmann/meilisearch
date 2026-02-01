@@ -1,5 +1,5 @@
-host: search.dev.localhost
-env: development
+host: meilisearch.local
+env: production
 
 persistence:
   enabled: true

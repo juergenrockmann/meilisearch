@@ -4,11 +4,16 @@ deployment:
 ingressRoute:
   dashboard:
     enabled: true
+  ingress:
+    hosts:
+      - host: traefik.local
+        paths:
+          - "/"
 
 certificatesResolvers:
   letsencrypt:
     acme:
-      email: dev@example.com
+      email: ju.rockmann@gmail.com
       storage: /data/acme.json
       httpChallenge:
         entryPoint: web
