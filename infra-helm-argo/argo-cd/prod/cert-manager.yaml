@@ -12,7 +12,7 @@ spec:
     helm:
       releaseName: cert-manager
       valueFiles:
-        - clusters/prod/cert-manager-values.yaml
+        - values-prod.yaml
       parameters:
         - name: crds.enabled
           value: "true"

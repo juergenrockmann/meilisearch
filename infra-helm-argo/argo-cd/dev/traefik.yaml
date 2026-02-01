@@ -8,11 +8,11 @@ spec:
   source:
     repoURL: 'git@github.com:juergenrockmann/meilisearch.git'
     targetRevision: main
-    path: .
+    path: infra-helm-argo/apps/traefik
     helm:
       releaseName: traefik
       valueFiles:
-        - clusters/dev/traefik-values.yaml
+        - values-dev.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: traefik

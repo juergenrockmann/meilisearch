@@ -1,0 +1,13 @@
+replicaCount: 1
+
+installCRDs: true
+
+# configure ACME staging environment
+acme:
+  email: dev@example.com
+  server: https://acme-staging-v02.api.letsencrypt.org/directory
+  privateKeySecretRef: acme-account-key
+  solvers:
+    - http01:
+        ingress:
+          class: traefik

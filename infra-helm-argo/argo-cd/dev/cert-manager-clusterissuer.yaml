@@ -1,23 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: cert-manager-clusterissuer-dev
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: 'git@github.com:juergenrockmann/meilisearch.git'
+    path: apps/cert-manager/clusterissuer-dev.yaml
     targetRevision: main
-    path: .
-    helm:
-      releaseName: cert-manager
-      valueFiles:
-        - values-dev.yaml
-      parameters:
-        - name: crds.enabled
-          value: "true"
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
     namespace: cert-manager
   syncPolicy:
     automated:
